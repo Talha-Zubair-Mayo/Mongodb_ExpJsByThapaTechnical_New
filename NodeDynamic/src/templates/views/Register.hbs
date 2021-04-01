@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+   
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/RegistrationStyle.css" />
+  </head>
+  <body>
+
+      {{>nav}}
+    <!-- partial:index.partial.html -->
+    <div class="form">
+      <div id="signup">
+        <h1>Register for Free</h1>
+
+        <form action="/Register" method="POST">
+          <div class="top-row">
+            <div class="field-wrap">
+              <label> First Name<span class="req">*</span> </label>
+              <input type="text" required autocomplete="off" name="fname" />
+            </div>
+
+            <div class="field-wrap">
+              <label> Last Name<span class="req">*</span> </label>
+              <input type="text" required autocomplete="off" name="lname" />
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label> Email Address<span class="req">*</span> </label>
+            <input type="email" required autocomplete="off" name="email" />
+          </div>
+
+          <div class="field-wrap">
+            <label> Password<span class="req">*</span> </label>
+            <input type="password" required autocomplete="off" name="pass" />
+          </div>
+          <div class="field-wrap">
+            <label> Confirm Password<span class="req">*</span> </label>
+            <input type="password" required autocomplete="off" name="cpass" />
+          </div>
+           <div class="field-wrap">
+            <label> Phone<span class="req">*</span> </label>
+            <input type="phone" required autocomplete="off" name="phone" />
+          </div>
+           <div class="field-wrap">
+            <label> Address<span class="req">*</span> </label>
+            <input type="text" required autocomplete="off" name="address" />
+          </div>
+          <button type="submit" class="button button-block">Register</button>
+        </form>
+      </div>
+
+      
+    </div>
+    <!-- /form -->
+    {{>footer}}
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/RegistrationJs.js"></script>
+  </body>
+</html>

@@ -103,18 +103,19 @@ app.post("/login", async (req, res) => {
     const lower = Email.toLowerCase();
     const UserEmail = await Register.findOne({ email: lower });
     const isMatch = await bcrypt.compare(Password, UserEmail.pass);
-    const Tokkk = await UserEmail.generateAuthToken();
-    //const expiry = 3600000*24;
-   
-    res.cookie("MERNCookie", Tokkk , 
-      {
-        //   expires:new Date(Date.now()+3600000),
-        expires: new Date(Date.now()+ 5*60000),
-          httpOnly:true
-      }
-      
-      );
     if (isMatch) {
+      const Tokkk = await UserEmail.generateAuthToken();
+      //const expiry = 3600000*24;
+     
+      res.cookie("MERNCookie", Tokkk , 
+        {
+          //   expires:new Date(Date.now()+3600000),
+          expires: new Date(Date.now()+ 5*60000),
+            httpOnly:true
+        }
+        
+        );
+
       res.render("home");
     } else {
       res.send("Email Or Pass is incorrect");
